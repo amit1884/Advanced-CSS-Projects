@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    button {
+      position: relative;
+      margin: auto;
+      font-size: 40px;
+      text-transform: uppercase;
+      padding: 25px 40px;
+      background-color: rgb(47, 47, 216);
+      color: #fff;
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+    button::before{
+        position: absolute;
+        width:100%;
+        height:100%;
+        background-color: rgb(37, 37, 201);
+        content:'';
+        top:0;
+        left:0;
+        z-index:-1;
+        border-radius: 50px;
+        transition: all .3s;
+    }
+    button:hover::before{
+        transform: scaleX(1.16) scaleY(1.25);
+        opacity:0;
+    }
+    button:hover{
+        transform: translateY(-10px);
+        box-shadow:0 10px 20px #000;
+    }
+    button:active{
+        transform: translateY(0);
+        box-shadow:none;
+
+    }
+  </style>
+  <body>
+    <button>Click Here</button>
+  </body>
+</html>

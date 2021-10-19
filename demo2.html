@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camera Logo</title>
+    <style>
+      .camera-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        width: 100vw;
+      }
+      .camera-body {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        background-color: grey;
+        border-radius: 20px;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 10px 10px rgb(51, 51, 51);
+      }
+      .camera-btn {
+        position: absolute;
+        top: -17px;
+        left: 40px;
+        z-index: -1;
+        background-color: aqua;
+        width: 70px;
+        height: 40px;
+        border-radius: 25px;
+      }
+      :root {
+        --lwidth: 300px;
+      }
+      .lens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .lens1 {
+        height: var(--lwidth);
+        width: var(--lwidth);
+        border-radius: 50%;
+        background-color: #fff;
+
+        box-shadow: 0 4px 20px black;
+      }
+      .lens2 {
+        height: calc(var(--lwidth) - 50px);
+        width: calc(var(--lwidth) - 50px);
+        border-radius: 50%;
+        background-color: green;
+      }
+      .lens3 {
+        height: calc(var(--lwidth) - 100px);
+        width: calc(var(--lwidth) - 100px);
+        border-radius: 50%;
+        background: linear-gradient(45deg, lime, lime 100%),
+          linear-gradient(135deg, rgb(16, 163, 16), rgb(16, 163, 16)),
+          linear-gradient(225deg, rgb(62, 236, 62),rgb(62, 236, 62)),
+          linear-gradient(225deg, rgb(41, 124, 41),rgb(41, 124, 41));
+        background-size: 50% 50%;
+        background-position: 0% 0%, 0% 100%, 100% 0%,100% 100%;
+        background-repeat: no-repeat;
+        transform: rotateZ(45deg);
+        box-shadow: 0 4px 40px black;
+        transition: all .3s;
+      }
+      .lens3:hover{
+        transform: rotateZ(90deg);
+        cursor: pointer;
+      }
+      .flash {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        z-index: 10;
+        border-radius: 50%;
+      }
+      .flash:hover{
+          box-shadow: 1px 10px 40px lightblue;
+      }
+      .camera-btn:hover{
+          background-color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="camera-container">
+      <div class="camera-body">
+        <div class="camera-btn"></div>
+        <div class="lens lens1">
+          <div class="lens lens2">
+            <div class="lens3"></div>
+          </div>
+        </div>
+        <div class="flash"></div>
+      </div>
+    </div>
+  </body>
+</html>

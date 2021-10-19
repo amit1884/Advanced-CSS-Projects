@@ -1,0 +1,487 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* Outside container */
+.main-div{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.power-btns{
+    position: absolute;
+    right:80vh;
+    top:34vh;
+    z-index:10;
+    background-color: #000;
+    width:5px;
+    height:50px;
+    border-radius: 3px;
+}
+.volume-btns-1{
+    position: absolute;
+    left:80vh;
+    top:32vh;
+    z-index:10;
+    background-color: #000;
+    width:5px;
+    height:50px;
+    border-radius: 3px;
+}
+.volume-btns-2{
+    position: absolute;
+    left:80vh;
+    top:39vh;
+    z-index:10;
+    background-color: #000;
+    width:5px;
+    height:50px;
+    border-radius: 3px;
+}
+/* Main Body */
+.center-div{
+    position: relative;
+    width:21%;
+    height:90%;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    border:5px solid black;
+    box-shadow: 1px 10px 10px black;
+    /* transition: all 3s; */
+    border-bottom-width:10px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    
+}
+
+/* Front Camera */
+.center-div::before{
+    content: '';
+    position: absolute;
+    top:10px;
+    left:10px;
+    width:13px;
+    height:13px;
+    border-radius: 50%;
+    border: 4px solid black;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:100%;
+    height:100%;
+    transition: all .6s;
+}
+/* Topbar */
+.top-bar{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    z-index: 1;
+    padding: 1px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#fff;
+    font-size: 13px;
+    padding-top:5px;
+}
+.left-side{
+    margin-left:40px;
+}
+.right-side{
+    display: flex;
+}
+.right-side div{
+    margin-left:5px;
+}
+.net{
+    color:#000 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.net p{
+    background-color: #fff;
+    font-size: 5px !important;
+    font-weight: 600;
+    padding:1px 2px;
+    border-radius: 2px;
+}
+.network{
+    width:10px;
+    height: 10px;
+    background-image: linear-gradient(319deg, rgba(255,255,255,0.9) 50%, transparent 50%);
+    background-size: 100% 100%;
+}
+
+.right-side div p{
+    font-size: 12px;
+    font-weight: 500;
+}
+.btry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btry-top{
+    width:5px;
+    height: 3px;
+    background-color: #fff;
+}
+.btry-body{
+    width:8px;
+    height: 9px;
+    background-color: #fff;
+}
+/* Time Area Home Page */
+.time-zone{
+    color: #fff;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+.time-zone p:first-child{
+    font-size:46px;
+    font-weight: 400 !important;
+}
+.time-zone p:nth-child(2){
+    font-size: 40px;
+    
+}
+.time-zone p:last-child{
+    font-size: 15px;
+    margin-top: 8px;
+
+}
+.g-search{
+    background-color: rgba(29, 26, 26, 0.9);
+    width:90%;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px !important;
+    margin: 0 auto;
+    border-radius:30px;
+    padding:3px;
+}
+/* Bottom Menu Icons */
+.menu-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.arrow{
+    padding:10px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+.menu-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+ .menu-list div{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+    padding: 0;
+}
+.menu-list div div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   width:43px;
+   height: 43px;
+   border-radius: 50%;
+   padding: 0;
+   /* background-color: #fff; */
+   /* background-color: transparent; */
+}
+.icon-text{
+    margin-top:5px;
+    font-size: 12px;
+    color:#fff;
+}
+.white-bg{
+    background-color: #fff; 
+}
+.no-bg{
+    background-color: transparent;
+}
+
+.menu-list div{
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-list div img{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    margin: 0;
+}
+.up-arrow-btn{
+    color:#fff;
+    border:none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+.down-arrow{
+    cursor: pointer;
+    padding:5px auto;
+}
+.down-arrow-btn{
+    color:#fff;
+    border:none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* All menu page */
+.all-menu{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 1s;
+   
+}
+
+.search-area{
+    width:96%;
+    /* margin-top:60px;
+    margin-bottom: 20px; */
+    margin:40px auto 5px ;
+    padding:8px 5px;
+    border-bottom: 2px solid rgb(0,92,200);
+    display: flex;
+    position: relative;
+    /* justify-content: space-between; */
+}
+.search-area .search-text{
+    font-size: 18px;
+    color:rgb(0,92,200);
+}
+.three-dot{
+    position: absolute;
+    top:10px;
+    right: 10px;
+}
+.three-dot span{
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin:3px auto;
+}
+.search-icon{
+    position: relative;
+    margin-right:20px;
+}
+.search-icon div{
+    width:16px;
+    height:16px;
+    border:3px solid rgb(0,92,200);
+    border-radius: 50%;
+}
+.search-icon::before{
+    content: '';
+    position: absolute;
+    right:0;
+    bottom:0;
+    height:10px;
+    width:3px;
+    z-index: 10;
+    transform: rotate(-45deg);
+    background-color: rgb(0,92,200);
+}
+.scrollY{
+    height:70vh;
+    overflow-y: auto;
+}
+
+.menu-mar{
+    margin:15px auto 40px;
+}
+::-webkit-scrollbar{
+    width:3px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0,92,200);
+}
+
+/* Toggling classes */
+.home-toggle{
+    opacity: 0;
+    
+}
+
+.hide-menu{
+   transform: translateY(200vh);
+   transition: all 1s;
+}
+
+
+/* Camera app icon */
+
+.camera-app{
+    background-color: #fff;
+    position: relative;
+    transform: rotate(40deg);
+}
+.camera-app::before{
+    position: absolute;
+    content: '';
+    width:5px;
+    height:5px;
+    border-radius: 50%;
+    background-color: red;
+    top:0;
+    right:3;
+    z-index:3;
+}
+.camera-lens{
+    width:25px !important;
+    height:25px !important;
+    border-radius: 50%;
+    background-color: rgb(39, 38, 38);
+}
+
+.cam-inner-lens{
+    width:10px !important;
+    height:10px !important;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+}
+.cam-inner-lens::before{
+    position: absolute;
+    content: '';
+    width:4px;
+    height:4px;
+    border-radius: 50%;
+    top:-50;
+    left:0;
+    background-color: #fff;
+    z-index:3;
+}
+
+/* Taskbar */
+.taskbar{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.6);
+}
+.taskbar-top-area{
+    background-color: rgb(26, 24, 24);
+    height:50px;
+    width: 100%;
+    z-index:-1;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+
+}
+.taskbar-hide{
+    display: none;
+}
+.taskbar-main-div{
+    position: absolute;
+    top:38px;
+    left:7px;
+    height:20vh;
+    width:96%;
+    background-color: rgb(44, 43, 43);
+    border-radius:10px;
+    transition: all .4s;
+}
+.toggle-taskbar{
+    transform: translateY(-35vh) !important;
+}
+
+.inner-top{
+    display: flex;
+    color:#fff;
+    padding:8px 8px;
+    font-size: 14px;
+    justify-content: space-between;
+}
+.taskbar-menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.taskbar-menu div{
+    width:40px;
+    height:40px;
+    background-color: gray;
+    border-radius: 50%;
+}
+.brightness{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height:30px;
+}
+input[type="range"]{
+    width:90%;
+    background-color: gray;
+    /* -webkit-appearance: none; */
+    border-radius: 10px;
+    height:3px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width:12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(0,92,200);
+    border: none;
+}
+.sim-name{
+
+    display: flex;
+    justify-content: space-between;
+    color:#fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.hiding-icons{
+    opacity: 0 !important;
+    /* display: none; */
+}

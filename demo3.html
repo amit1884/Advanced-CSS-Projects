@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendulum</title>
+    <style>
+        *{
+            margin:0;
+            box-sizing: border-box;
+        }
+        .main_div{
+            width:98vw;
+            height:98vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width:50vw;
+            height:50vh;
+            border:2px solid dodgerblue;
+            border-bottom-width:50px;
+            display: flex;
+            justify-content: center;
+        }
+        .box span{
+            width:2px;
+            height:40vh;
+            background-color: rgba(0,0,0,0.8);
+            margin:0 18px;
+            position: relative;
+        }
+        .box span::before{
+            content: '';
+            position: absolute;
+            bottom:0;
+            transform: translateX(-50%);
+            width:40px;
+            height:40px;
+            border-radius: 50%;
+            background-color: rgb(43, 40, 40);
+            z-index: 2;
+            box-shadow: 0 5px 6px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+        }
+        .box span:first-child{
+            animation: leftball 2s linear infinite;
+            transform-origin: top;
+        }
+        .box span:last-child{
+            animation: rightball 2s linear 1s infinite;
+            transform-origin: top;
+        }
+        @keyframes leftball {
+            
+            0%{
+                transform: rotate(0deg);
+            }
+            20%{
+                transform: rotate(50deg);
+            }
+            50%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(0);
+            }
+        }
+        @keyframes rightball {
+            
+            0%{
+                transform: rotate(0deg);
+            }
+            20%{
+                transform: rotate(-50deg);
+            }
+            50%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main_div">
+        <div class="box">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
