@@ -30,3 +30,13 @@ $('.taskbar').click(function(){
         $('.taskbar').addClass('taskbar-hide')
     },450)
 })
+
+$('.all-menu').dblclick(function(){
+    $('.taskbar').removeClass('taskbar-hide')
+    $('.taskbar-top-area').show()
+    $('.hi').addClass('hiding-icons')
+    setTimeout(()=>{
+        $('.taskbar-main-div').removeClass('toggle-taskbar')
+    },100)
+    
+})
