@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .outer-div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width:100vw;
+            height: 100vh;
+            
+        }
+        .center-div{
+            /* border: 3px solid ; */
+            width:500px;
+            height:500px;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            position: relative;
+            z-index: -1;
+            border-radius: 50%;
+        }
+        .center{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top:45%;
+            left:45%;
+            border-radius: 50%;
+            background-color: black;
+            animation: rotate 8s linear infinite ;
+        }
+        .center-hand{
+            position: absolute;
+            width: 20px;
+            height: 200px;
+            background-color: black;
+            top:10%;
+            left:48%;
+            animation: rotate 8s linear infinite ;
+            transform-origin: bottom;
+            border-radius: 10px;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0);
+                background-color: brown;
+            }
+            12.5%{
+                transform: rotate(45deg);
+                background-color: purple;
+            }
+            25%{
+                transform: rotate(90deg);
+                background-color: blue;
+            }
+            37.5%{
+                transform: rotate(135deg);
+                background-color: red;
+            }
+            50%{
+                transform: rotate(180deg);
+                background-color: green;
+            }
+            62.5%{
+                transform: rotate(225deg);
+                background-color: crimson;
+            }
+            75%{
+                transform: rotate(270deg);
+                background-color: yellow;
+            }
+            87.5%{
+                transform: rotate(335deg);
+                background-color: sienna;
+            }
+            100%{
+                transform: rotate(360deg);
+                background-color: brown;
+            }
+        }
+        
+        .dots{
+            width:50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        .dot-t{
+            position: absolute;
+            top:0;
+            left:45%;
+            animation: color1 8s linear infinite;
+            animation-delay: 0s;
+        }
+        @keyframes color1 {
+            0%{
+                background-color: brown;
+                box-shadow: 0 5px 10px brown;
+            }
+            100%{
+                background-color: white;
+            }
+        } 
+        .dot-r{
+            position: absolute;
+            top:45%;
+            right:0;
+            animation: color4 8s linear infinite;
+            animation-delay: 2s;
+        }
+        @keyframes color4 {
+            0%{
+                background-color: blue;
+                box-shadow: 0 5px 10px blue;
+            }
+            100%{
+                background-color: white;
+            }
+        }
+        .dot-b{
+            position: absolute;
+            bottom:0;
+            left:45%;
+            animation: color3 8s linear infinite;
+            animation-delay: 4s;
+        }
+        @keyframes color3 {
+            0%{
+                background-color: green;
+                box-shadow: 0 5px 10px green;
+            }
+            100%{
+                background-color: white;
+            }
+        }
+        .dot-l{
+            position: absolute;
+            top:45%;
+            left:0%;    
+            animation: color2 8s linear infinite;
+            animation-delay: 6s;
+        }
+        @keyframes color2 {
+            0%{
+                background-color: yellow;
+                box-shadow: 0 5px 10px yellow;
+            }
+            100%{
+                background-color: white;
+            }
+        }
+       .dot-tl{
+
+            position: absolute;
+            top:70px;
+            right:63px;
+            animation: color5 8s linear infinite;
+            animation-delay: 1s;
+       }
+       @keyframes color5 {
+            0%{
+                background-color: purple;
+                box-shadow: 0 5px 10px purple;
+            }
+            100%{
+                background-color: white;
+            }
+        }
+        .dot-lb{
+            position: absolute;
+            bottom:70px;
+            right:63px;
+            animation: color6 8s linear infinite;
+            animation-delay: 3s;
+        }
+        @keyframes color6 {
+            0%{
+                background-color: red;
+                box-shadow: 0 5px 10px red;
+            }
+            100%{
+                background-color: white;
+            }
+        }
+        .dot-br{
+            position: absolute;
+            bottom:70px;
+            left:63px;
+            animation: color7 8s linear infinite;
+            animation-delay: 5s;
+        }
+        @keyframes color7 {
+            0%{
+                background-color: crimson;
+                box-shadow: 0 5px 10px crimson;
+            }
+            100%{
+                background-color: white;
+            }
+        }
+        .dot-rt{
+            position: absolute;
+            top:70px;
+            left:63px;
+            animation: color8 8s linear infinite;
+            animation-delay: 6.5s;
+        }
+        @keyframes color8 {
+            0%{
+                background-color: sienna;
+                box-shadow: 0 5px 10px sienna;
+            }
+            100%{
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-div">
+        <div class="center-div">
+            <div class="dots dot-t"></div>
+            <div class="dots dot-tl"></div>
+            <div class="dots dot-l"></div>
+            <div class="dots dot-lb"></div>
+            <div class="dots dot-b"></div>
+            <div class="dots dot-br"></div>
+            <div class="dots dot-r"></div>
+            <div class="dots dot-rt"></div>
+            <div class="center-hand"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+</body>
+</html>
