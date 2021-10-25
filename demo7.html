@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        .outer-container{
+            /* width: 100vw; */
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+        }
+        .letter{
+            font-size: 80px;
+            font-weight: 600;
+            margin-left: 50px;
+            animation: entrance 4s alternate infinite;
+            transform: translateY(100px);
+        }
+        @keyframes entrance{
+            0%{
+                transform: translateY(100px) rotateZ(90deg);
+                
+            }
+            90%{
+                transform: translateY(0) rotateZ(0);
+            }
+            100%{
+                transform: translateY(0) rotateZ(0);
+            }
+        }
+        .l-1{
+            animation-delay: 0s;
+        }
+        .l-2{
+            animation-delay: .5s;
+        }
+        .l-3{
+            animation-delay: 1s;
+        }
+        .l-4{
+            animation-delay: 1.5s;
+        }
+        .l-5{
+            animation-delay: 2s;
+        }
+        .l-6{
+            animation-delay: 2.5s;
+        }
+        .l-7{
+            animation-delay: 3s;
+        }
+        .l-8{
+            animation-delay: 3.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-container">
+        <div class="center-div">
+           <span class="letter l-1">E</span>
+           <span class="letter l-2">N</span>
+           <span class="letter l-3">T</span>
+           <span class="letter l-4">R</span>
+           <span class="letter l-5">A</span>
+           <span class="letter l-6">N</span>
+           <span class="letter l-7">C</span>
+           <span class="letter l-8">E</span>
+        </div>
+    </div>
+</body>
+</html>
