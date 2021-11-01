@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console.log(Replica)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        width: 100vw;
+        height: 100vh;
+        background-color: #121212;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .r-box {
+        width: 800px;
+        height: 600px;
+        background-color: #ee453c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .r-box::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 90px;
+        height: 100%;
+        content: "";
+        background-color: #121212;
+      }
+      .r-curve {
+        width: 280px;
+        height: 250px;
+        border-top-left-radius: 300px;
+        border-top-right-radius: 300px;
+        border: 30px solid #ffff;
+        border-bottom: 0;
+        transform: rotate(90deg);
+        z-index: 22;
+        background-color: none;
+      }
+      .s1 {
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        top: 158px;
+        left: 157px;
+        background: none;
+        z-index: 2;
+        transform: rotateZ(5deg);
+      }
+      .s2 {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 263px;
+        left: 154px;
+        background: none;
+        transform: rotateX(180deg);
+      }
+      .s3 {
+        width: 140px;
+        height: 130px;
+        position: absolute;
+        bottom: 175px;
+        right: 385px;
+        background: none;
+        z-index: 2;
+        transform: rotateZ(180deg);
+      }
+      .s4 {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 278px;
+        right: 386px;
+        background: none;
+        transform: rotateX(180deg) rotateZ(180deg);
+      }
+      .br-style {
+        border-radius: 0 0 300px 0px;
+        border-top: none !important;
+        border-left: none !important;
+        border: 30px solid #ffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="r-box">
+        <div class="shape">
+          <div class="r-curve"></div>
+          <div class="br-style s1"></div>
+          <div class="br-style s2"></div>
+          <div class="br-style s3"></div>
+          <div class="br-style s4"></div>
+          <div class="c1"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

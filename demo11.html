@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Carousel</title>
+   <style>
+       *{
+           margin: 0;
+           padding:0;
+           box-sizing: border-box;
+           /* overflow-y: hidden; */
+       }
+       .container{
+           width:100vw;
+           height:100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           overflow-x: hidden;
+       }
+       .wrrapper{
+           width:800px;
+           height:500px;
+           /* border: 1px solid #000; */
+           display: flex;
+           position: relative;
+           overflow-x: auto;
+       }
+       .slide-container{
+           display: flex;
+           width:max-content;
+           /* overflow-x: hidden; */
+          transition: 1s;
+       }
+     
+       .slide-container img{
+            width:800px !important;
+           height:100%;
+
+       }
+       ::-webkit-scrollbar{
+           display: none;
+       }
+       .button-container{
+           margin: 20px;
+       }
+       #prev,#next{
+           position: absolute;
+           top:45%;
+           background-color: blueviolet;
+           color:#fff;
+           border-radius: 50%;
+           font-weight: 600;
+           height: 40px;
+           width:40px;
+           font-size: 20px;
+           outline: none;
+           border: none;
+           cursor: pointer;
+       }
+       #prev{
+           left:20px;
+       }
+       #next{
+           right:20px;
+       }
+       @media (max-width:991px){
+           .wrrapper{
+               width:100vw;
+               height:300px;
+           }
+           .slide-container img{
+               width:420px !important;
+           }
+       }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Carousel with control</h1>
+            <br/>
+        </div>
+        <div class="wrrapper">
+            <div class="slide-container" id="slider">
+                <img class ="slides" src="images/1.jpg" alt="" id="slide"/>
+                <img class ="slides" src="images/2.png" alt=""/>
+                <img class ="slides" src="images/3.jpg" alt=""/>
+                <img class ="slides" src="images/4.png" alt=""/>
+            </div>
+            <button id="prev"  onclick="slidePrev()" ><</button>
+            <button id="next" onclick="slideNext()">></button>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+    var i=1;
+    var j=0;
+    var k=document.getElementById('slide').offsetWidth;
+    function slideNext(){        
+        var ele=document.getElementById('slider')
+        if(i<4)
+        {
+             j=j-k;
+            ele.style.transform=`translateX(${j}px)`;
+            i++;
+        }
+    }
+    function slidePrev(){
+        var ele=document.getElementById('slider')
+        if(i>1)
+        {
+             j=j+k;
+            ele.style.transform=`translateX(${j}px)`;
+            i--;
+        }
+    }
+    </script>
+</body>
+</html>

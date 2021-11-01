@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Carousel</title>
+   <style>
+       *{
+           margin: 0;
+           padding:0;
+           box-sizing: border-box;
+           /* overflow-y: hidden; */
+       }
+       .container{
+           width:100vw;
+           height:100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           overflow-x: hidden;
+       }
+       .wrrapper{
+           width:800px;
+           height:500px;
+           border: 1px solid #000;
+           display: flex;
+           position: relative;
+           overflow-x: auto;
+       }
+       .slide-container{
+           display: flex;
+           width:max-content;
+           animation: carousel 14s ease-out infinite;
+       }
+     
+       .slide-container img{
+            width:800px !important;
+           height:100%;
+       }
+       ::-webkit-scrollbar{
+           display: none;
+       }
+       @keyframes carousel {
+           0%{
+               transform: translateX(0);
+           }
+           5%{
+               transform: translateX(0);
+           }
+           10%{
+               transform: translateX(0);
+           }
+           15%{
+               transform: translateX(-800px);
+           }
+           20%{
+               transform: translateX(-800px);
+           }
+           25%{
+               transform: translateX(-800px);
+           }
+           30%{
+               transform: translateX(-1600px);
+           }
+           35%{
+               transform: translateX(-1600px);
+           }
+           40%{
+            transform: translateX(-2400px);
+           }
+           45%{
+               transform: translateX(-2400px);
+           }
+           50%{
+               transform: translateX(-2400px);
+           }
+           55%{
+               transform: translateX(-1600px);
+           }
+          60%{
+            transform: translateX(-1600px);
+          }
+          65%{
+            transform: translateX(-1600px);
+          }
+          70%{
+            transform: translateX(-800px);
+          }
+          75%{
+            transform: translateX(-800px);
+          }
+          80%{
+            transform: translateX(-800px);
+          }
+          85%{
+              transform: translateX(0);
+          }
+          100%{
+              transform: translateX(0);
+          }
+       }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>CSS Only Carousel</h1>
+            <br/>
+        </div>
+        <div class="wrrapper">
+            <div class="slide-container">
+                <img src="images/1.jpg" alt=""/>
+                <img src="images/2.png" alt=""/>
+                <img src="images/3.jpg" alt=""/>
+                <img src="images/4.png" alt=""/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
