@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <style>
+        .header{
+            height:100vh;
+            width:100%;
+            background-color: #9ab7d3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+.scroll-container {
+  height: 100vh;
+  min-height: 450px;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.scroll-container:nth-of-type(1) {
+  background-color: #bdd0c4;
+}
+.scroll-container:nth-of-type(2) {
+  background-color: #f5d2d3;
+}
+.scroll-container:nth-of-type(3) {
+  background-color: #9ab7d3;
+}
+.scroll-container:nth-of-type(4) {
+  background-color: #dfccf1;
+}
+
+.scroll-container:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.scroll-element,
+.scroll-caption {
+  width: 50%;
+}
+
+.scroll-element {
+  min-height: 300px;
+  height: 100%;
+  background-color: #eaeaea;
+}
+
+.scroll-caption {
+  margin: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: #faddad;
+}
+
+footer p {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+  color: #221133;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 650px) {
+  .scroll-container,
+  .scroll-container:nth-of-type(even) {
+    flex-direction: column;
+    align-content: inherit;
+  }
+
+  .scroll-element {
+    height: 100%;
+  }
+
+  .scroll-element,
+  .scroll-caption {
+    width: 100%;
+  }
+}
+
+.js-scroll {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.js-scroll.scrolled {
+  opacity: 1;
+}
+
+.scrolled.fade-in {
+  animation: fade-in 1s ease-in-out both;
+}
+
+.scrolled.fade-in-bottom {
+  animation: fade-in-bottom 1s ease-in-out both;
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>Animate on Scroll using Vanilla Js</h1>
+        <h2>
+            Scroll Down to View
+        </h2>
+        </div>
+    </div>
+    <section class="scroll-container">
+        <div class="scroll-element js-scroll fade-in">
+      
+        </div>
+        <div class="scroll-caption">
+          This animation fades in.
+        </div>
+      </section>
+      <section class="scroll-container">
+        <div class="scroll-element js-scroll fade-in-bottom">
+      
+        </div>
+        <div class="scroll-caption">
+          This animation slides in to the top.
+        </div>
+      </section>
+      <script>
+          const scrollElements = document.querySelectorAll(".js-scroll");
+
+        const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+            // console.log('Bounding..',elementTop)
+        return (
+            elementTop <=
+            (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+        };
+
+        const elementOutofView = (el) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+            elementTop > (window.innerHeight || document.documentElement.clientHeight)
+        );
+        };
+
+        const displayScrollElement = (element) => {
+        element.classList.add("scrolled");
+        };
+
+        const hideScrollElement = (element) => {
+        element.classList.remove("scrolled");
+        };
+
+        const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+            } else if (elementOutofView(el)) {
+            hideScrollElement(el)
+            }
+        })
+        }
+
+        window.addEventListener("scroll", () => { 
+        handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
